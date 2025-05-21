@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ангелина Лебедь-Юрченко | Галерея</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <svg class="design-element design-element-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40,-60.5C52.1,-50.8,62.1,-38.5,68.1,-24.1C74.1,-9.8,76.1,6.6,71.3,20.9C66.5,35.2,54.9,47.4,41.2,56.3C27.5,65.2,11.7,70.8,-3.3,74.9C-18.3,79,-36.6,81.6,-49.9,74.5C-63.1,67.4,-71.3,50.6,-75.3,33.5C-79.3,16.5,-79.1,-0.8,-74.2,-16.3C-69.3,-31.8,-59.7,-45.4,-46.8,-54.9C-33.9,-64.3,-17,-69.6,-0.8,-68.7C15.5,-67.8,30.9,-60.7,40,-60.5Z" transform="translate(100 100)"/>
+    </svg>
+    <h1>Ангелина Лебедь-Юрченко</h1>
+    <p class="subtitle">Фотогалерея</p>
+    <svg class="design-element design-element-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44.3,-65.1C56.2,-56.2,64.1,-42.7,70.2,-28.5C76.3,-14.2,80.6,0.9,79.2,15.8C77.8,30.7,70.8,45.5,58.3,54.9C45.8,64.3,27.9,68.4,10.6,66.4C-6.7,64.4,-13.4,56.4,-24.3,49.2C-35.2,42.1,-50.3,35.9,-59.5,25.1C-68.7,14.3,-72.1,-1,-68.3,-14.7C-64.5,-28.3,-53.6,-40.3,-40.8,-49C-28,-57.7,-13.4,-63.1,1.1,-64.6C15.6,-66.1,31.2,-63.7,44.3,-65.1Z" transform="translate(100 100)"/>
+    </svg>
+</header>
+
+<nav id="main-nav">
+    <div class="nav-container">
+        <div class="logo">Angel.com</div>
+        <div class="nav-links">
+            <a href="#gallery">Галерея</a>
+            <a href="#contact">Контакты</a>
+            <a href="#countdown">До выпуска</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <section id="gallery">
+        <h2 class="section-title">Моя галерея</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/qMc4md42/image.png" alt="Фото 1" class="gallery-img" data-index="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/BZH06G8R/image.png" alt="Фото 2" class="gallery-img" data-index="1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/SN4pYtCR/image.png" alt="Фото 3" class="gallery-img" data-index="2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/9FktNsbF/image.png" alt="Фото 4" class="gallery-img" data-index="3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Mp8XTDKm/image.png" alt="Фото 5" class="gallery-img" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/bJvTsn93/image.png" alt="Фото 6" class="gallery-img" data-index="5">
+            </div>
+        </div>
+    </section>
+
+    <section id="countdown" class="countdown-section">
+        <h2 class="countdown-title">До получения высшего образования осталось:</h2>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-days">0</div>
+                <div class="countdown-label">дней</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-hours">0</div>
+                <div class="countdown-label">часов</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-minutes">0</div>
+                <div class="countdown-label">минут</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-seconds">0</div>
+                <div class="countdown-label">секунд</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Свяжитесь со мной</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xldbvlaa" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                    <div class="error-message" id="name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение</label>
+                    <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    <div class="error-message" id="message-error"></div>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Ангелина Лебедь-Юрченко.</p>
+</footer>
+
+<div class="modal" id="gallery-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <img src="" alt="" class="modal-img" id="modal-img">
+        <button class="modal-nav modal-prev" id="modal-prev">&larr;</button>
+        <button class="modal-nav modal-next" id="modal-next">&rarr;</button>
+    </div>
+</div>
+
+<div class="contact-modal" id="contact-modal">
+    <div class="contact-modal-content">
+        <button class="contact-modal-close" id="contact-modal-close">&times;</button>
+        <h2>Спасибо за ваше сообщение!</h2>
+        <p>Я свяжусь с вами в ближайшее время.</p>
+    </div>
+</div>
+
+<div class="welcome-popup" id="welcome-popup">
+    <h2>Добро пожаловать!</h2>
+    <p>Вы на странице Ангелиночки LY! 🥰🥰🥰</p>
+    <button class="welcome-close" id="welcome-close">Закрыть</button>
+</div>
+
+<script src="../../script.js"></script>
+</body>
+</html>
