@@ -154,11 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let isValid = true;
 
         if (name === '') {
-            document.getElementById('name-error').textContent = 'Пожалуйста, введите ваше имя';
+            document.getElementById('name-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('name-error').style.display = 'block';
             isValid = false;
         } else if (!isRussianOrEnglish(name)) {
-            document.getElementById('name-error').textContent = 'Имя должно содержать только русские или английские буквы';
+            document.getElementById('name-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('name-error').style.display = 'block';
             isValid = false;
         } else {
@@ -166,11 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (email === '') {
-            document.getElementById('email-error').textContent = 'Пожалуйста, введите ваш email';
+            document.getElementById('email-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('email-error').style.display = 'block';
             isValid = false;
         } else if (!isValidEmail(email)) {
-            document.getElementById('email-error').textContent = 'Пожалуйста, введите корректный email';
+            document.getElementById('email-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('email-error').style.display = 'block';
             isValid = false;
         } else {
@@ -178,11 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (phone === '') {
-            document.getElementById('phone-error').textContent = 'Пожалуйста, введите ваш телефон';
+            document.getElementById('phone-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('phone-error').style.display = 'block';
             isValid = false;
         } else if (!isValidPhone(phone)) {
-            document.getElementById('phone-error').textContent = 'Пожалуйста, введите корректный телефон';
+            document.getElementById('phone-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('phone-error').style.display = 'block';
             isValid = false;
         } else {
@@ -190,11 +190,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (message === '') {
-            document.getElementById('message-error').textContent = 'Пожалуйста, введите ваше сообщение';
+            document.getElementById('message-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('message-error').style.display = 'block';
             isValid = false;
         } else if (!isRussianOrEnglish(message)) {
-            document.getElementById('message-error').textContent = 'Сообщение должно содержать только русские или английские буквы';
+            document.getElementById('message-error').textContent = 'здесь могла быть ваша реклама👾';
             document.getElementById('message-error').style.display = 'block';
             isValid = false;
         } else {
