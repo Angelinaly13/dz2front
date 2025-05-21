@@ -18,6 +18,46 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollPosition = 0;
     const headerHeight = document.querySelector('header').offsetHeight;
 
+    function initializeCountdown() {
+        const daysEl = document.getElementById('countdown-days');
+        const hoursEl = document.getElementById('countdown-hours');
+        const minutesEl = document.getElementById('countdown-minutes');
+        const secondsEl = document.getElementById('countdown-seconds');
+
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+            console.error('Элементы обратного отсчета не найдены');
+            return;
+        }
+
+        const targetDate = new Date('2028-05-20T00:00:00Z');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                daysEl.textContent = '0';
+                hoursEl.textContent = '0';
+                minutesEl.textContent = '0';
+                secondsEl.textContent = '0';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            daysEl.textContent = days.toString();
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
     window.addEventListener('scroll', function() {
         const currentScrollPosition = window.pageYOffset;
 
@@ -56,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    galleryImages.forEach(img => {
+    galleryImages.forEach((img, index) => {
+        img.setAttribute('data-index', index);
         img.addEventListener('click', function() {
             currentImageIndex = parseInt(this.getAttribute('data-index'));
             modalImg.src = this.src;
@@ -164,7 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Отправляем...';
             submitBtn.disabled = true;
 
-            fetch(contactForm.action, {
+            const formAction = contactForm.action || 'https://example.com/api/contact';
+
+            fetch(formAction, {
                 method: 'POST',
                 body: new FormData(contactForm),
                 headers: {
@@ -215,31 +258,5 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('welcomeClosed', 'true');
     });
 
-    const targetDate = new Date('2028-05-20T00:00:00');
-
-    function updateCountdown() {
-        const now = new Date();
-        const diff = targetDate - now;
-
-        if (diff <= 0) {
-            document.getElementById('countdown-days').textContent = '0';
-            document.getElementById('countdown-hours').textContent = '0';
-            document.getElementById('countdown-minutes').textContent = '0';
-            document.getElementById('countdown-seconds').textContent = '0';
-            return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById('countdown-days').textContent = days;
-        document.getElementById('countdown-hours').textContent = hours;
-        document.getElementById('countdown-minutes').textContent = minutes;
-        document.getElementById('countdown-seconds').textContent = seconds;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    initializeCountdown();
 });
